@@ -1,6 +1,11 @@
 <form id="search-photos" action="/search" method="post" style="text-align:center">
   <input name="hashtag" type="text" placeholder="#hashtag" />
-  <input name="resolution" type="text" placeholder="resolution" />
+  <select name="resolution">
+    <option value="" disabled selected>Pick the size</option>
+    <option value="thumbnail">Thumbnail</option>
+    <option value="low_resolution">Low Resolution</option>
+    <option value="standard_resolution">Standard Resolution</option>
+  </select>
   <input type="submit" name="submit" value="search" /> 
 </form>
 <br>

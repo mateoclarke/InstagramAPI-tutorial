@@ -1,6 +1,6 @@
 require 'sinatra'
+require 'bundler'
 require 'unirest'
-require 'figaro'
 
 get '/' do  
   @title = 'Photos'  
@@ -22,7 +22,7 @@ end
 
 def recent_photos (hashtag = "clown", resolution = "thumbnail")
   @photos = []
-  instagram_response = "https://api.instagram.com/v1/tags/#{hashtag}/media/recent?client_id=[CLIENT_ID]"
+  instagram_response = "https://api.instagram.com/v1/tags/#{hashtag}/media/recent?client_id=11c0139aaea746868b576d8e2bf0743e"
   response = Unirest.get(instagram_response)
   photos_array = response.body["data"]
 
