@@ -383,7 +383,7 @@ What we want to do is call a specific hashtag and see the most recent images tha
 	
 	def recent_photos (hashtag = "clown", resolution = "thumbnail")
   	  @photos = []
-  	  instagram_response = "https://api.instagram.com/v1/tags/#{hashtag}/media/recent?client_id=11c0139aaea746868b576d8e2bf0743e"
+  	  instagram_response = "https://api.instagram.com/v1/tags/#{hashtag}/media/recent?client_id=[YOUR_CLIENT_ID]"
   	  response = Unirest.get(instagram_response)
   	  photos_array = response.body["data"]
 
