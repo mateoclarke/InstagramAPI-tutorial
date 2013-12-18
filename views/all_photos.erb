@@ -1,0 +1,14 @@
+<form id="search-photos" action="/search" method="post" style="text-align:center">
+  <input name="hashtag" type="text" placeholder="#hashtag" />
+  <input name="resolution" type="text" placeholder="resolution" />
+  <input type="submit" name="submit" value="search" /> 
+</form>
+<br>
+
+<% if @photos.count > 0 %>
+  <% @photos.each do |photo| %>
+    <img src="<%= photo %>" />
+  <% end %>
+<% else %>
+  <h4>Sorry no photos :( </h4>
+<% end %>
