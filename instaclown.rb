@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'unirest'
+require 'figaro'
 
 get '/' do  
   @title = 'Photos'  
