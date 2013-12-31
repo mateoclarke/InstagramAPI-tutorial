@@ -99,281 +99,7 @@ Let's now add some HTML structure to our homepage with a Layout page in Views fo
 
 ## CSS
 
-Let's take care of our styling in two css files that will sit in a folder called public. Create a ```public``` directory. Inside that folder, we will have ```public/reset.css``` and ```public/style.css```
-
-In ```reset.css``` paste this code:
-
-	reset.css/* 
-    HTML5 ✰ Boilerplate 
- 
-    style.css contains a reset, font normalization and some base styles. 
- 
-    credit is left where credit is due. 
-    much inspiration was taken from these projects: 
-        yui.yahooapis.com/2.8.1/build/base/base.css 
-        camendesign.com/design/ 
-        praegnanz.de/weblog/htmlcssjs-kickstart 
-	*/  
-  
-	/* 
-    html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline) 
-    v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark 
-    html5doctor.com/html-5-reset-stylesheet/ 
-	*/  
-  
-	html, body, div, span, object, iframe,  
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,  
-	abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,  
-	small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,  
-	fieldset, form, label, legend,  
-	table, caption, tbody, tfoot, thead, tr, th, td,  
-	article, aside, canvas, details, figcaption, figure,  
-	footer, header, hgroup, menu, nav, section, summary,  
-	time, mark, audio, video {  
-	    margin:0;  
-	    padding:0;  
-	    border:0;  
-	    font-size:100%;  
-	    font: inherit;  
-	    vertical-align:baselinebaseline;  
-	}  
-	  
-	article, aside, details, figcaption, figure,  
-	footer, header, hgroup, menu, nav, section {  
-	        display:block;  
-	}  
-	  
-	blockquote, q { quotes:none; }  
-	  
-	blockquote:before, blockquote:after,  
-	q:before, q:after { content:''; content:none; } 
-	 
-	ins { background-color:#ff9; color:#000; text-decoration:none; } 
-	 
-	mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; } 
-	 
-	del { text-decoration: line-through; } 
-	 
-	abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; } 
-	 
-	table { border-collapse:collapse; border-spacing:0; } 
-	 
-	hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; } 
-	 
-	input, select { vertical-align:middle; } 
-	 
-	/* END RESET CSS */ 
- 
-	/* font normalization inspired by  from the YUI Library's fonts.css: developer.yahoo.com/yui/ */  
-	body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */  
-	select, input, textarea, button { font:99% sans-serif; }  
-  
-	/* normalize monospace sizing 
- 	* en.wikipedia.org/wiki/MediaWiki_talk:Common.css/	Archive_11#Teletype_style_fix_for_Chrome */  
-	pre, code, kbd, samp { font-family: monospace, sans-serif; }  
-  
-	/* 
-	 * minimal base styles 
-	 */  
-  
-	body, select, input, textarea {  
-    	/* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */  
-    color: #444;  
-    	/* set your base font here, to apply evenly */  
-    	/* font-family: Georgia, serif;  */  
-	}  
-  
-	/* headers (h1,h2,etc) have no default font-size or margin. define those 	yourself. */  
-	h1,h2,h3,h4,h5,h6 { font-weight: bold; }  
-  
-	/* always force a scrollbar in non-IE: */  
-	html { overflow-y: scroll; }  
-  
-	/* accessible focus treatment: people.opera.com/patrickl/experiments/	keyboard/test */  
-	a:hover, a:active { outline: none; }  
-  
-	a, a:active, a:visited { color: #607890; }  
-	a:hover { color: #036; }  
-  
-	ul, ol { margin-left: 2em; }  
-	ol { list-style-type: decimal; }  
-  
-	/* remove margins for navigation lists */  
-	nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }  
-  
-	small { font-size: 85%; }  
-	strong, th { font-weight: bold; }  
-  
-	td { vertical-align: top; }  
-  
-	/* set sub, sup without affecting line-height: gist.github.com/413930 */  
-	sub, sup { font-size: 75%; line-height: 0; position: relative; }  
-	sup { top: -0.5em; }  
-	sub { bottombottom: -0.25em; }  
-  
-	pre {  
-    	/* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-	css21-white-space-pre-wrap/ */  
-    	whitewhite-space: pre; whitewhite-space: pre-wrap; whitewhite-space: pre-line; word-wrap: break-word;  
-    	padding: 15px;  
-		}  
-  
-	textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */  
-  
-	.ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */  
-  
-	/* align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */  
-	input[type="radio"] { vertical-align: text-bottom; }  
-	input[type="checkbox"] { vertical-align: bottombottom; }  
-	.ie7 input[type="checkbox"] { vertical-align: baselinebaseline; }  
-	.ie6 input { vertical-align: text-bottom; }  
-  
-	/* hand cursor on clickable input elements */  
-	label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }  
-  
-	/* webkit browsers add a 2px margin outside the chrome of form elements */  
-	button, input, select, textarea { margin: 0; }  
-  
-	/* colors for form validity */  
-	input:valid, textarea:valid   {  }  
-	input:invalid, textarea:invalid {  
-            border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-	box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;  
-	}  
-	.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }  
-  
-	/* These selection declarations have to be separate. 
-     No text-shadow: twitter.com/miketaylr/status/12228805301 
-     Also: hot pink. */  
-	::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }  
-	::selection { background:#FF5E99; color:#fff; text-shadow: none; }  
-  
-	/*  j.mp/webkit-tap-highlight-color */  
-	a:link { -webkit-tap-highlight-color: #FF5E99; }  
-  
-	/* make buttons play nice in IE: 
-     www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ 	*/  
-	button {  width: auto; overflow: visible; }  
-  
-	/* bicubic resizing for non-native sized IMG: 
-	     code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-	side-image-resizing/ */  
-	.ie7 img { -ms-interpolation-mode: bicubic; }  
-	
-## More CSS
-
-In ```style.css```, paste this:
-
-	body {  
-    margin: 35px auto;  
-    width: 640px;  
-	}  
-	  
-	header {  
-	    text-align: center;  
-	    margin: 0 0 20px;  
-	}  
-	  
-	header h1 {  
-	    display: inline;  
-	    font-size: 32px;  
-	}  
-	  
-	header h1 a:link, header h1 a:visited {  
-	    color: #444;  
-	    text-decoration: none;  
-	}  
-	  
-	header h2 {  
-	    font-size: 16px;  
-	    font-style: italic;  
-	    color: #999;  
-	}  
-	  
-	#main {  
-	    margin: 0 0 20px;  
-	}  
-	  
-	#add {  
-	    margin: 0 0 20px;  
-	}  
-	  
-	#add textarea {  
-	    height: 30px;  
-	    width: 510px;  
-	    padding: 10px;  
-	    border: 1px solid #ddd;  
-	}  
-	  
-	#add input {  
-	    height: 50px;  
-	    width: 100px;  
-	    margin: -50px 0 0;  
-	    border: 1px solid #ddd;  
-	    background: white;  
-	}  
-	  
-	#edit textarea {  
-	    height: 30px;  
-	    width: 480px;  
-	    padding: 10px;  
-	    border: 1px solid #ddd;  
-	}  
-	  
-	#edit input[type=submit] {  
-	    height: 50px;  
-	    width: 100px;  
-	    margin: -50px 0 0;  
-	    border: 1px solid #ddd;  
-	    background: white;  
-	}  
-	  
-	#edit input[type=checkbox] {  
-	    height: 50px;  
-	    width: 20px;  
-	}  
-	  
-	article {  
-	    border: 1px solid #eee;  
-	    border-top: none;  
-	    padding: 15px 10px;  
-	}  
-	  
-	article:first-of-type {  
-	    border: 1px solid #eee;  
-	}  
-	  
-	article:nth-child(even) {  
-	    background: #fafafa;  
-	}  
-	  
-	article.complete {  
-	    background: #fedae3;  
-	}  
-	  
-	article span {  
-	    font-size: 0.8em;  
-	}  
-	  
-	p {  
-	    margin: 0 0 5px;  
-	}  
-	  
-	.meta {  
-	    font-size: 0.8em;  
-	    font-style: italic;  
-	    color: #888;  
-	}  
-	  
-	.links {  
-	    font-size: 1.8em;  
-	    line-height: 0.8em;  
-	    float: rightright;  
-	    margin: -10px 0 0;  
-	}  
-	  
-	.links a {  
-	    display: block;  
-	    text-decoration: none;  
-	}  
-	
+Let's take care of our styling in two css files that will sit in a folder called public. Create a ```public``` directory. Inside that folder, place these two files, [```reset.css```](https://github.com/mateoclarke/InstagramAPI-tutorial/blob/final/public/reset.css) and [```style.css```](https://github.com/mateoclarke/InstagramAPI-tutorial/blob/final/public/style.css).
 
 ## Integrating Instagram API
 
@@ -399,9 +125,11 @@ Here we are defining a method, ```recent_photos``` to call from our view page th
 
 We are using ```Unirest``` to make our API request so we need to make sure to add it to our gems at the top of this file with ``require 'unirest'``
 
+In the ```instagram_response``` line, replace ```[YOUR_CLIENT_ID]``` with the client ID you got from the [Instagram Developer's registration page](http://instagram.com/developer/clients/register/). 
+
 Let's run our server with ```ruby instaclown.rb``` and see if this all works.
 
-*SPOILER ALERT: Notice that our default arguements are ```hashtag = 'clown'``` and ```resolution = 'thumbnail'```. We can change these arguements for other searches.*
+*SPOILER ALERT: Notice that our default arguements are ```hashtag = 'clown'``` and ```resolution = 'thumbnail'```. We can change these arguments for other searches.*
 	
 
 ## Going a step further
@@ -416,7 +144,7 @@ Now, what if we want to be able to search for more than just clown pictures. Let
 	
 Now try these params in the URL: <http://localhost:4567/low_resolution/sunsets>
 
-Instagram gives us images in three sizes: low_resoltion (306x306), standard_resolution (640x640), and thumbnail (150 x 150). 
+Instagram gives us images in three sizes: low_resolution (306x306), standard_resolution (640x640), and thumbnail (150 x 150). 
 
 ## Finishing touches
 
@@ -430,11 +158,16 @@ To do this, we need to add a POST route to our ```instaclown.rb``` file :
 	  erb :all_photos
 	end
 	
-We also need to add the actual form to the ```all_photos.erb``` view file above the exisiting code:
+We also need to add the actual form to the ```all_photos.erb``` view file above the exisiting code. In addition to getting a search field, we'll have a dropdown menu, so users can select their photos' resolution:
 
 	<form id="search-photos" action="/search" method="post" style="text-align:center">
 	  <input name="hashtag" type="text" placeholder="#hashtag" />
-	  <input name="resolution" type="text" placeholder="resolution" />
+	  <select name="resolution">
+    <option value="" disabled selected>Pick the size</option>
+    <option value="thumbnail">Thumbnail</option>
+    <option value="low_resolution">Low Resolution</option>
+    <option value="standard_resolution">Standard Resolution</option>
+	  </select>
 	  <input type="submit" name="submit" value="search" /> 
 	</form>
 	<br>
